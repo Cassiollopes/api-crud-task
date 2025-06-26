@@ -1,4 +1,4 @@
-import TaskService from "../services/TaskService.ts";
+import TaskService from "../services/TaskService";
 
 class TaskController {
   async createTask(req: any, res: any) {
