@@ -3,7 +3,7 @@ import routes from "./routes";
 import fileUpload from "express-fileupload";
 import cors from "cors";
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
 
 const app = express();
 
