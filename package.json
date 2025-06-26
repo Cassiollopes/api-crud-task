@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./dist/app.js",
+    "build": "tsc",
     "dev": "tsnd --clear --respawn --transpile-only ./src/app.ts"
   },
   "keywords": [],
