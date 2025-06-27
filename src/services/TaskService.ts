@@ -14,7 +14,7 @@ class TaskService {
   async getTasksByUserId(userId: string): Promise<Task[]> {
     return await prisma.task.findMany({
       where: { userId },
-      orderBy: [{ completed: 'asc' }, { updatedAt: 'desc' }, { createdAt: 'desc' }],
+      orderBy: [{ completed: 'asc' }, { createdAt: 'desc' }],
     });
   }
 
@@ -33,7 +33,7 @@ class TaskService {
       data.imageUrl = await this.uploadImage(data.imageUrl);
     }
     
-    if (data.imageUrl && data.imageUrl === undefined) {
+    if (data.imageUrl && data.imageUrl === "") {
       data.imageUrl = null
     }
 
