@@ -67,7 +67,7 @@ class AuthController {
       try {
         await AuthService.validateMagicLink(token);
 
-        const redirectUrl = `${process.env.FRONTEND_URL}/auth/magic-link-callback?token=${token}`;
+        const redirectUrl = `${process.env.FRONTEND_URL}/api/auth/magic-link-callback?token=${token}`;
         res.redirect(redirectUrl);
       } catch (error) {
         let errorMessage = "Erro desconhecido";
@@ -76,7 +76,7 @@ class AuthController {
         }
 
         res.redirect(
-          `${process.env.FRONTEND_URL}/auth/error?error=${encodeURIComponent(
+          `${process.env.FRONTEND_URL}/api/auth/error?error=${encodeURIComponent(
             errorMessage
           )}`
         );
